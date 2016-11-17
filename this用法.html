@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    //一般而言，在Javascript中，this指向函数执行时的当前对象。
+
+   /* var myObject = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function () {
+            return this.firstName+' '+this.lastName;
+        }
+    }*/
+    //console.log(myObject.fullName());          // 返回 [object Object] (所有者对象)
+
+
+    /*
+     使用构造函数调用函数
+     如果函数调用前使用了 new 关键字, 则是调用了构造函数。
+     这看起来就像创建了新的函数，但实际上 JavaScript 函数是重新创建的对象
+
+     构造函数的调用会创建一个新的对象。新对象会继承构造函数的属性和方法。
+     构造函数中 this 关键字没有任何的值。
+     this 的值在函数调用时实例化对象(new object)时创建。
+
+    function myFunction(arg1, arg2) {
+        this.firstName = arg1;
+        this.lastName  = arg2;
+        this.say = function () {
+            return this.firstName+"  "+this.lastName;
+        }
+    }
+    var x = new myFunction("John","Doe");   //调用构造函数
+    console.log(x.firstName);                             // 返回 "John"
+    console.log(x.say);
+     */
+
+    function myFunction(a, b) {
+        return a * b;
+    }
+    console.log(myFunction.call(this, 10, 2));      // 返回 20
+
+</script>
+</body>
+</html>
