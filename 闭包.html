@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+/*
+设想下如果你想统计一些数值，且该计数器在所有函数中都是可用的。
+*/
+/*
+
+//全局变量的写法
+var counter = 0;
+function add()
+{
+	counter +=1;
+}
+
+add();
+add();
+add()
+console.log(counter);
+
+
+//内嵌函数的写法
+function add() {
+    var counter = 0;
+    function plus() {counter += 1;}
+    plus();    
+    return counter; 
+}
+*/
+
+//闭包的写法，内部的counter不受外界的干扰
+var add = (function () {
+    var counter = 0;
+    return function () {return counter += 1;}
+})();
+
+add();
+add();
+test = add();
+console.log(test);
+
+
+</script>
+</body>
+</html>
