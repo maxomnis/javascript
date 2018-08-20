@@ -88,8 +88,21 @@
       this.age = age;
     }
 
-    var a = new ('jack',10);
-    var b = new ('tom', 33);
+    var a = new Person('jack',10);
+    var b = new Person('tom', 33);
+    console.log(a.name);
+
+
+
+    var innerFunction = function(){
+
+      function say()
+      {
+        console.log("inner function");
+      }
+    };
+
+    console.log(innerFunction.constructor);
 </script>
 </body>
 </html>
